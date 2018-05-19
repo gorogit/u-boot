@@ -7,7 +7,7 @@
 #include "zynq-7000.dtsi"
 
 / {
-	model = "Zynq ZYBO Development Board";
+	model = "Zynq ZYBO Z7 Development Board";
 	compatible = "digilent,zynq-zybo", "xlnx,zynq-7000";
 
 	aliases {
@@ -35,7 +35,7 @@
 };
 
 &clkc {
-	ps-clk-frequency = <50000000>;
+	ps-clk-frequency = <33333333>;
 };
 
 &gem0 {
