@@ -9,6 +9,7 @@
 #include <asm/arch/sys_proto.h>
 #include <asm/arch/ps7_init_gpl.h>
 
+#if 0
 __weak int ps7_init(void)
 {
 	/*
@@ -26,16 +27,20 @@ __weak int ps7_post_config(void)
 	 */
 	return 0;
 }
+#endif
 
 /* For delay calculation using global registers*/
 #define SCU_GLOBAL_TIMER_COUNT_L32	0xF8F00200
 #define SCU_GLOBAL_TIMER_COUNT_U32	0xF8F00204
 #define SCU_GLOBAL_TIMER_CONTROL	0xF8F00208
 #define SCU_GLOBAL_TIMER_AUTO_INC	0xF8F00218
+#if 0
 #define APU_FREQ  666666666
+#endif
 
 #define PS7_MASK_POLL_TIME 100000000
 
+#if 0
 /* IO accessors. No memory barriers desired. */
 static inline void iowrite(unsigned long val, unsigned long addr)
 {
@@ -81,7 +86,9 @@ static void perf_reset_and_start_timer(void)
 	perf_reset_clock();
 	perf_start_clock();
 }
+#endif
 
+#if 0
 int __weak ps7_config(unsigned long *ps7_config_init)
 {
 	unsigned long *ptr = ps7_config_init;
@@ -140,6 +147,7 @@ int __weak ps7_config(unsigned long *ps7_config_init)
 		ptr += numargs;
 	}
 }
+#endif
 
 unsigned long __weak __maybe_unused ps7GetSiliconVersion(void)
 {
